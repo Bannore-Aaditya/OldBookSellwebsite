@@ -1,0 +1,55 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+<h1>This is sell page</h1>
+
+<form class="row g-3 needs-validation" method ="post" action="/confsell">
+  {% csrf_token %}
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">Book Title</label>
+      <input type="text" class="form-control" name="bname" id="bname" value="" required>
+      </div>
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Author</label>
+      <input type="text" class="form-control" name="author" id="" value="author" required>
+      </div>
+    <div class="col-md-4">
+      <label for="validationCustomUsername" class="form-label">Number of resale</label>
+      <div class="input-group has-validation">
+        <input type="text" class="form-control" name="resalen" id="resalen" aria-describedby="inputGroupPrepend" required>
+       </div>
+    </div>
+    <div class="col-12">
+      <label for="validationCustom03" class="form-label">Enter Phone Number</label>
+      <input type="phone2numeric" class="form-control" name="phnob" id="phnob" required>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">Year of Purchase</label>
+      <input type="number" class="form-control" name="yearofb" id="yearofb" required>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom04" class="form-label">Condition(out of 10)</label>
+      <input type="number" class="form-control" name="cond" id="cond" required>
+      </div>
+    <div class="col-md-3">
+      <label for="validationCustom05" class="form-label">Expected Price</label>
+      <input type="number" class="form-control" name="exptp" id="exptp" required>
+      </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+        <label class="form-check-label" for="invalidCheck">
+          Agree to terms and conditions
+        </label>
+        <div class="invalid-feedback">
+          You must agree before submitting.
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+  </form>
+
+{% endblock  %}
