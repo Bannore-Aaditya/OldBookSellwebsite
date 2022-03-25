@@ -1,0 +1,50 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+<div>
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+</div>
+
+<form class="row g-3" method ="post" action="/confreg">
+    {% csrf_token %}
+    <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">First Name</label>
+        <input type="text" class="form-control" name="first_name" id="first_name">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Last Name</label>
+        <input type="text" class="form-control" name = "last_name" id="last_name">
+      </div> 
+    <div class="col-12">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" class="form-control" name = "email" id="email">
+    </div>
+    <div class="col-12">
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input type="password" class="form-control" name= "password1" id="Password1">
+    </div>
+    <div class="col-12">
+        <label for="inputPassword4" class="form-label">ReEnter Password</label>
+        <input type="password" class="form-control" name="password2" id="Password2">
+      </div>
+    <div class="col-12">
+      <label for="inputCity" class="form-label">Phone Number</label>
+      <input type="phone2numeric" class="form-control" name="phno" id="phno">
+    </div>
+    <div class="col-12">
+        <label for="inputCity" class="form-label">College Name</label>
+        <input type="text" class="form-control" name="col" id="col">
+    </div>
+    <div class="col-12">
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" name="city" id="city">
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">register</button>
+    </div>
+  </form>
+
+{% endblock  %}

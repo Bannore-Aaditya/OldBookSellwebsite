@@ -1,0 +1,23 @@
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.column {
+    float: left;
+    width: 33%;
+    padding: 0 10px;
+}
+
+.columnr {
+    float: right;
+    width: 33%;
+    padding: 0 10px;
+}
+.card{
+    flex-basis: 33% ;
+    padding: 10 ;
+    min-width: 200px ;
+    margin: 50px ;
+}
