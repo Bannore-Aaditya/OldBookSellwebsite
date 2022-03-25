@@ -1,0 +1,97 @@
+{% extends 'Base.html' %}
+{% block content %}
+    {% load static %}
+    <link rel ="stylesheet" href="{% static 'style.css' %}">
+{% comment %}     <script type="text/javascript" src="js/bootstrap/bootstrap-dropdown.js"></script>
+    <script src="js/jquery.js"></script>        
+<script src="js/bootstrap.js"></script> {% endcomment %}
+    {{ queryset }}
+    <h1>This is home page</h1>
+{% comment %} 
+    <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle"
+           href="#"
+           role="button"
+           id="dropdownMenuLink"
+           data-bs-toggle="dropdown"
+           aria-expanded="false">
+            Dropdown link
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li>
+                <a class="dropdown-item"
+                   href="/home?q=price_lh">Price low to high</a>
+            </li>
+            <li>
+                <a class="dropdown-item"
+                   href="/home?q=price_hl">Price high to low</a>
+            </li>
+            <li>
+                <a class="dropdown-item"
+                   href="/home?q=date_ld">Date Latest</a>
+            </li>
+            <li>
+                <a class="dropdown-item"
+                   href="/home?q=date_od">Date Oldest</a>
+            </li>
+        </ul>
+    </div> 
+    <div> {% endcomment %}
+
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item"> <a class="nav-link" href="/home/price_lh">Price low to high</a> </li>
+            <li class="list-group-item"> <a class="nav-link" href="/home/price_hl">Price high to low</a> </li>
+            <li class="list-group-item"> <a class="nav-link" href="/home/date_ld">Date Latest</a> </li>
+            <li class="list-group-item"> <a class="nav-link" href="/home/date_od">Date Oldest</a> </li>
+          </ul>    
+{% comment %}     <ul class="">
+        <li class="nav-item">
+            <a class="nav-link" href="/home/price_lh">Price low to high</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/home/price_hl">Price high to low</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/home/date_ld">Date Latest</a>
+          </li>         
+        <li class="nav-item">
+          <a class="nav-link" href="/home/date_od">Date Oldest</a>
+        </li>
+      </ul> {% endcomment %}
+    </div>
+    {%  for book  in books  %}
+        <div class="row">
+            <div class="column">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ book.name }}</h5>
+                        <p class="card-text">
+                            By Author {{ book.author }} brought in year {{ book.yearofb }}
+                            condition of book {{ book.cond }}/10 ,number of resolds {{ book.resalen }}
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Rs {{ book.exptp }}</a>
+                        <a href="#" class="card-link">{{ book.phnob }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    {% endfor %}
+{% endblock  %}
+{% comment %} <div class="bookobject">
+    <div class="bookimage">
+# image
+#        <div class="Spec_offer text-center"><a href="#">Best Condition</a></div>
+    </div>    
+    <div class="detailofbook">
+        <div class="booktitle"><a href="#">{{book.name}}</a></div>
+        <div class="bookauthor"><a href="#"><p>{{book.author}}</p></a></div>
+        <div class="whichhand"><a href="#"><p>{{book.resalen}}</p></a></div>
+        <div class="yearofpurchase"><a href="#"><p>{{book.yearb}}</p></a></div>
+        <div class="bookcondition"><a href="#"><p>{{book.cond}}</p></a></div>
+        <div class="exceptedprice"><a href="#"><p>{{book.exptp}}</p></a></div>
+    </div>
+</div>     {% endcomment %}
